@@ -7,11 +7,12 @@ import Income from "./components/Incomes";
 import Expences from "./components/Expenses";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
+      {/* <Footer/> */}
     </Router>
   );
 }

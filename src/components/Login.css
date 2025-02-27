@@ -26,7 +26,7 @@
     width: 100%;
     padding: 10px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #974b4b;
     border-radius: 5px;
     font-size: 16px;
 }
@@ -60,3 +60,45 @@
 .signup-link a:hover {
     text-decoration: underline;
 }
+.auth-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.auth-links li {
+    display: inline;
+}
+
+.login-btn, .signup-btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.login-btn {
+    background: rgb(2, 204, 46);
+    color: white;
+    border: 1px solid white;
+}
+
+.signup-btn {
+    background: #f8b400;
+    color: black;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background: white;
+    color: #1e1e2f;
+}
+
+.signup-btn:hover {
+    background: #ffa500;
+}
+
+

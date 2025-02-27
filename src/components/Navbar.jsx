@@ -7,19 +7,14 @@ const Navbar = () => {
             <div className="navbar-left">
                 <h2 className="logo">FinanceTracker</h2>
                 <ul className="nav-links">
-                    <li><Link to="/">Home</Link></li>
+                    
                     <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><Link to="/incomes">Incomes</Link></li>
                     <li><Link to="/expenses">Expenses</Link></li>
                 </ul>
                 {/* <input className="search" type="text" placeholder="Search transactions..." /> */}
             </div>
-            <div className="navbar-right">
-                <ul className="auth-links">
-                    <li><Link to="/login" className="login-btn">Log in</Link></li>
-                    <li><Link to="/signup" className="signup-btn">Sign Up</Link></li>
-                </ul>
-            </div>
+            
         </nav>
     );
 }
