@@ -1,31 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom"; // ✅ Import Link
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
-    <div className="home-container">
+    <div className={`home-container ${theme}`}>
       <div className="header-container">
         <div className="homeright">
           <h1 className="home-title">Finance Tracker</h1>
           <p className="home-description">
             Take control of your finances! Manage your Dashboard, Incomes, and Expenses efficiently.
           </p>
-      <div className="navbar-right">
-        <ul className="auth-links">
-          <li><Link to="/login" className="login-btn">Log in</Link></li>
-          <li><Link to="/signup" className="signup-btn">Sign up</Link></li>
-        </ul>
-      </div>
+          <div className="navbar-right">
+            <ul className="auth-links">
+              <li><Link to="/login" className="login-btn">Log in</Link></li>
+              <li><Link to="/signup" className="signup-btn">Sign up</Link></li>
+            </ul>
+          </div>
         </div>
-        <img 
-          className="homep" 
-          src="photo1.png" 
-          alt="Finance Tracker Logo" 
-        />
-      </div>
 
-      {/* Navigation Buttons */}
+        {/* Theme Toggle Image */}
+        <img 
+          className="daypic" 
+          src={theme === "light" ? "/day.png" : "/night.png"} 
+          alt="Theme Toggle" 
+          onClick={toggleTheme} 
+        />
+
+        {/* Finance Tracker Image */}
+        <img className="homep"  src={theme === "light" ? "/photo2.png" : "/photo1.png"} alt="Finance Tracker Logo" />
+      </div>
     </div>
   );
 };
