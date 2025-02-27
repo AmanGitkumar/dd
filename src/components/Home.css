@@ -1,0 +1,15 @@
+.home-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    height: 509px;
+  }
+  
+  .home-container h1 {
+    color: #333;
+  }
+  
+  .home-container p {
+    color: #555;
+  }
+  

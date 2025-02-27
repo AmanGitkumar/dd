@@ -3,21 +3,22 @@ import "./Navbar.css";
 
 const Navbar = () => {
     return (
-        <nav>
-            <div className='left'>
-                <li>
-                    <ul>Dashboard</ul>
-                    <ul>Incomes</ul>
-                    <ul>Expenses</ul>
-                    <input className='search' type="text" placeholder="Search your transaction:)"/>
-                </li>
+        <nav className="navbar">
+            <div className="navbar-left">
+                <h2 className="logo">FinanceTracker</h2>
+                <ul className="nav-links">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
+                    <li><Link to="/incomes">Incomes</Link></li>
+                    <li><Link to="/expenses">Expenses</Link></li>
+                </ul>
+                {/* <input className="search" type="text" placeholder="Search transactions..." /> */}
             </div>
-            <div className='right'>
-                <li>
-                    <ul>Go to</ul>
-                    <Link to="/login" className="login">Log in</Link>
-                    <Link to="/signup" className="signup">Sign Up</Link>
-                </li>
+            <div className="navbar-right">
+                <ul className="auth-links">
+                    <li><Link to="/login" className="login-btn">Log in</Link></li>
+                    <li><Link to="/signup" className="signup-btn">Sign Up</Link></li>
+                </ul>
             </div>
         </nav>
     );
